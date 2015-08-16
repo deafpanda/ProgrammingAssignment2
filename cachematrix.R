@@ -29,8 +29,8 @@ makeCacheMatrix <- function(x = matrix()) {
         get <- function() m
 
 ## set - attempts to generate the inverse matrix value
-##       using the standard matrix multiply binary operator
-        set <- function(matrix) m <<- solve(x) %*% x
+##       using the solve functino
+        set <- function(matrix) m <<- solve(x)
 
 ## getmatrix - simply returns the value of input
         getmatrix <- function() x
@@ -47,11 +47,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve:
 ## PURPOSE:
-        ## Return the inverse of the matrix generated in makeCacheMatrix$setmatrix()
-        ## If the solution is already present (makeCacheMatrix$get()), then
-        ## Do not recalculate the inverse, just return the value; otherwise
-        ## calculate the inverse and store it in the input function makeCacheMatrix$set().
-        ## and then return the result
+## Return the inverse of the matrix generated in makeCacheMatrix$setmatrix()
+## If the solution is already present (makeCacheMatrix$get()), then
+## Do not recalculate the inverse, just return the value; otherwise
+## calculate the inverse and store it in the input function makeCacheMatrix$set().
+## and then return the result
 
 ## Inputs:datatype - list output from makeCacheMatrix
 
